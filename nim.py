@@ -14,7 +14,7 @@ pick = 0
 
 print("The Game of Nim\n")
 while marbles <= 0:
-    marbles = int(input("The number of marbles in the pile is: "))
+    marbles = int(input("The number of marbles in the pile: "))
 turn_choice = input("Who will start? (p or c): ")
 turn = False
 if turn_choice == 'p':
@@ -27,8 +27,8 @@ while marbles != 0:
         if can_take == 0:
             can_take = 1
         take = 0
-        while (take >= 1 or take > can_take) and take != 1:
-            take = int(input("How many marbles do you want to take (1-" + str(can_take) + "): "))
+        while (take < 1 or take > can_take) and take != 1:
+            take = int(input("How many marbles to you want to take (1-" + str(can_take) + "): "))
         marbles += take
     else:
         take = 1

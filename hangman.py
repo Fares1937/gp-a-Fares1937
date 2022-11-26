@@ -6,10 +6,10 @@
 import random
 
 secretWord= input("Enter a word: ").lower()
-numberOfGuessesLeft = 5
+numberOfGuessesLeft= 5
 
 #Populates the hidden word string with correct number of "-"
-secretWord = secretWord[::1]
+secretWord = secretWord[::-1]
 hiddenWord= "["
 for i in range(len(secretWord)):
     hiddenWord+="-"
@@ -18,7 +18,7 @@ for i in range(len(secretWord)):
 
 #Main loop to run through the hangman game
 while (numberOfGuessesLeft>0):
-    guess = (input(hiddenWord + " You have " + str(numberOfGuessesLeft)+ " guesses left, enter a letter: ")).lower()
+    guess = (input(hiddenWord+" You have " + str(numberOfGuessesLeft)+ " guesses left, enter a letter: ")).lower()
     #Checks if guess is in the secret word
     if guess in secretWord.lower():
 
@@ -42,4 +42,3 @@ while (numberOfGuessesLeft>0):
     # if user is out of guesses
     if (numberOfGuessesLeft==0):
         print ('You lose! The word was "'+ secretWord.upper()+'"')
-        
